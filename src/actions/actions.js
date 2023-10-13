@@ -3,7 +3,7 @@ import axios from "axios";
 export const getIncome = () => async (dispatch) => {
     try {
         dispatch({ type: "DATA_FETCH" })
-        const response = await axios.get("http://localhost:9000/income");
+        const response = await axios.get("https://finance-management-lvbb.onrender.com/income");
         if (response.status === 200)
             dispatch({ type: "FETCH_INCOME", payload: response.data });
     } catch (error) {
@@ -15,7 +15,7 @@ export const getIncome = () => async (dispatch) => {
 export const getSavings = () => async (dispatch) => {
     try {
         dispatch({ type: "DATA_FETCH" })
-        const response = await axios.get("http://localhost:9000/savings");
+        const response = await axios.get("https://finance-management-lvbb.onrender.com/savings");
         if (response.status === 200)
             dispatch({ type: "FETCH_SAVINGS", payload: response.data });
     } catch (error) {
@@ -27,7 +27,7 @@ export const getSavings = () => async (dispatch) => {
 export const getExpenses = () => async (dispatch) => {
     try {
         dispatch({ type: "DATA_FETCH" })
-        const response = await axios.get("http://localhost:9000/expenses");
+        const response = await axios.get("https://finance-management-lvbb.onrender.com/expenses");
         if (response.status === 200)
             dispatch({ type: "FETCH_EXPENSES", payload: response.data });
     } catch (error) {
@@ -38,7 +38,7 @@ export const getExpenses = () => async (dispatch) => {
 export const addIncome = (data) => async (dispatch) => {
     try {
         dispatch({ type: "DATA_FETCH" })
-        const response = await axios.post("http://localhost:9000/income", data);
+        const response = await axios.post("https://finance-management-lvbb.onrender.com/income", data);
         dispatch({ type: "ADD_INCOME", payload: response.data });
     } catch (error) {
         dispatch({ type: "DATA_FETCH_FAILURE" })
@@ -48,7 +48,7 @@ export const addIncome = (data) => async (dispatch) => {
 export const addExpenses = (data) => async (dispatch) => {
     try {
         dispatch({ type: "DATA_FETCH" })
-        const response = await axios.post("http://localhost:9000/expenses", data);
+        const response = await axios.post("https://finance-management-lvbb.onrender.com/expenses", data);
         dispatch({ type: "ADD_EXPENSES", payload: response.data });
     } catch (error) {
         dispatch({ type: "DATA_FETCH_FAILURE" })
@@ -58,7 +58,7 @@ export const addExpenses = (data) => async (dispatch) => {
 export const addSavings = (data) => async (dispatch) => {
     try {
         dispatch({ type: "DATA_FETCH" })
-        const response = await axios.post("http://localhost:9000/savings", data);
+        const response = await axios.post("https://finance-management-lvbb.onrender.com/savings", data);
         dispatch({ type: "ADD_SAVINGS", payload: response.data });
     } catch (error) {
         dispatch({ type: "DATA_FETCH_FAILURE" })
